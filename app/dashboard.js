@@ -1,4 +1,3 @@
-cat > /mnt/user-data/outputs/ootp-dashboard/app/dashboard.js << 'ENDFILE'
 'use client'
 
 import React, { useState } from 'react'
@@ -410,27 +409,3 @@ export default function Dashboard() {
     </div>
   )
 }
-ENDFILE
-cat /mnt/user-data/outputs/ootp-dashboard/app/dashboard.js | head -20
-Output
-
-'use client'
-
-import React, { useState } from 'react'
-import { ChevronDown, ChevronUp, Upload, RefreshCw, AlertCircle, TrendingUp, Users, BarChart3, Zap, Trash2 } from 'lucide-react'
-
-export default function Dashboard() {
-  const [dataMode, setDataMode] = useState('input')
-  const [uploadedFiles, setUploadedFiles] = useState([])
-  const [rawData, setRawData] = useState('')
-  const [analyses, setAnalyses] = useState([])
-  const [combinedAnalysis, setCombinedAnalysis] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [expandedSections, setExpandedSections] = useState({
-    overview: true,
-    depth: true,
-    warnings: true,
-  })
-
-  const toggleSection = (section) => {
-    setExpandedSections(prev => ({
